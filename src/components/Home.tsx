@@ -106,7 +106,7 @@ const Home = () => {
           <img src={Ghost} style={{ width: "60%" }} />
         </Image>
       </MainContent>
-      <Button>
+      <Button role="button">
         <Subtitle>join the discord</Subtitle>
       </Button>
     </Layout>
