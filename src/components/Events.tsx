@@ -55,13 +55,11 @@ const Events = () => {
       </ContentBg>
       <ContentBg>
         <Title>announcements</Title>
-        <Content>
-          <WidgetBot
-            style={{ width: "100%", borderRadius: "1rem" }}
-            server="797709118357110835"
-            channel="798992018008571944"
-          />
-        </Content>
+        <Content
+          as="iframe"
+          src="https://e.widgetbot.io/channels/797709118357110835/798992018008571944"
+          style={{ width: "100%", borderRadius: "1rem" }}
+        ></Content>
       </ContentBg>
     </ContentLayout>
   );
