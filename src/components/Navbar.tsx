@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import styled, { css } from "styled-components";
-import { contentWidth } from "../pages/global";
+import { contentWidth } from "../global";
 import { color, device, fontSizes } from "./Home";
 
 const Container = styled.nav`

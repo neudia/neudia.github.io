@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import "../fonts.css";
+import { createGlobalStyle } from "styled-components";
+import "./fonts/fonts.css";
 
 export const theme = {
   primary: "#404B8F",

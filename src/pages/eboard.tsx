@@ -4,7 +4,7 @@ import { TitleOnBg } from "../components/About";
 import Footer from "../components/Footer";
 import { color, device, MainLayout } from "../components/Home";
 import Navbar from "../components/Navbar";
-import { GlobalStyle, theme } from "./global";
+import { GlobalStyle, theme } from "../global";
 
 const Container = styled.div`
   width: 100%;
