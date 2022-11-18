@@ -43,6 +43,10 @@ const MenuButton = styled.button`
   @media ${device.md} {
     display: none;
   }
+
+  &:hover {
+    color: ${color("secondary")};
+  }
 `;
 
 interface NavProps {
