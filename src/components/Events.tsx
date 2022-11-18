@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
 import WidgetBot from "@widgetbot/react-embed";
+import styled from "styled-components";
 import { Title } from "./About";
 import { color, device } from "./Home";
 
