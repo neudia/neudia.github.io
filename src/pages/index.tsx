@@ -9,10 +9,6 @@ import Events from "../components/Events";
 import { GlobalStyle, theme } from "../global";
 
 const IndexPage = () => {
-
-  React.useEffect(() => {
-
-    
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
