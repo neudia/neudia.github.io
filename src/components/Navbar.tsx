@@ -8,7 +8,6 @@ import { color, device, fontSizes } from "./Home";
 const Container = styled.nav`
   position: sticky;
   background-color: ${color("primary")};
-  width: 100vw;
 
   color: ${color("bg")};
   font-size: ${fontSizes.md};
