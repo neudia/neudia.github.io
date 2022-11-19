@@ -15,4 +15,8 @@ const config: GatsbyConfig = {
   plugins: ["gatsby-plugin-styled-components"],
 };
 
+module.exports = {
+  pathPrefix: "/website",
+};
+
 export default config;
