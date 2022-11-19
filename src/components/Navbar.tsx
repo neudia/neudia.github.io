@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import styled, { css } from "styled-components";
 import { contentWidth } from "../global";
 import { color, device, fontSizes } from "./Home";
+import { Link } from "gatsby";
 
 const Container = styled.nav`
   position: sticky;
@@ -69,7 +70,7 @@ const MobileNavContent = styled.ul<NavProps>`
   }
 `;
 
-const NavItem = styled.li`
+const NavItem = styled(Link)`
   color: inherit;
   text-decoration: none;
 
@@ -103,14 +104,14 @@ const MainIcon = styled.a`
 
 export const pages = ["home", "eboard", "resources"];
 
+const navItems = pages.map((p: string) => (
+  <NavItem to={p === "home" ? "/" : `/${p}`} key={p}>
+    {p}
+  </NavItem>
+));
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = pages.map((p: string) => (
-    <NavItem as="a" href={p === "home" ? "/" : p} key={p}>
-      {p}
-    </NavItem>
-  ));
 
   return (
     <Container>
@@ -119,7 +120,7 @@ const Navbar = () => {
         {navItems}
 
         {/* Toggles drawer. */}
-        <MenuButton type="button" onClick={() => setIsOpen(!isOpen)}>
+        <MenuButton onClick={() => setIsOpen(!isOpen)}>
           <GiHamburgerMenu size={32} />
         </MenuButton>
       </NavContent>

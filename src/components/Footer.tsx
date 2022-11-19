@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 import { color, device, fontSizes, MainLayout } from "./Home";
@@ -26,7 +27,7 @@ const FooterContent = styled.ul`
   list-style-type: none;
 `;
 
-const FooterItem = styled.li`
+const FooterItem = styled(Link)`
   color: inherit;
   text-decoration: none;
 
@@ -54,7 +55,7 @@ const Footer = () => {
         {pages.map((p: string) => {
           return (
             <>
-              <FooterItem as="a" href={"#"} key={p}>
+              <FooterItem to={p === "home" ? "/" : p} key={p}>
                 {p}
               </FooterItem>
               <Divider>•</Divider>

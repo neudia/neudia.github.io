@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Title } from "./About";
 import { color, device } from "./Home";
 
-const ContentLayout = styled.div`
+export const ContentLayout = styled.div`
   width: 100%;
 
   display: flex;
@@ -12,7 +12,7 @@ const ContentLayout = styled.div`
   justify-content: space-around;
 `;
 
-const ContentBg = styled.section`
+export const ContentBg = styled.section`
   width: 100%;
   aspect-ratio: 1 / 1;
 
@@ -32,7 +32,7 @@ const ContentBg = styled.section`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   width: 90%;
   height: 90%;
 
@@ -58,7 +58,6 @@ const Events = () => {
         <Content
           as="iframe"
           src="https://e.widgetbot.io/channels/797709118357110835/798992018008571944"
-          style={{ width: "100%", borderRadius: "1rem" }}
         ></Content>
       </ContentBg>
     </ContentLayout>

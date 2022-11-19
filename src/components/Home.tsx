@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Ghost from "../images/ghostie.png";
+import { navigate } from "gatsby";
 
 export const color = (variant: string) => (props: any) => props.theme[variant];
 
@@ -12,6 +13,7 @@ export const device = {
 };
 
 export const fontSizes = {
+  xs: "1.125rem",
   sm: "1.5rem",
   md: "1.875rem",
   lg: "3rem",
@@ -80,7 +82,7 @@ const Button = styled.button`
   }
 `;
 
-const Subtitle = styled.h2`
+export const Subtitle = styled.h2`
   font-weight: initial;
 
   @media ${device.md} {
@@ -95,6 +97,7 @@ const Subtitle = styled.h2`
 `;
 
 const Home = () => {
+  const inviteLink = "https://discord.gg/n9MvDAxZgS";
   return (
     <Layout>
       <MainContent>
@@ -106,7 +109,7 @@ const Home = () => {
           <img src={Ghost} style={{ width: "60%" }} />
         </Image>
       </MainContent>
-      <Button>
+      <Button onClick={() => navigate(inviteLink)}>
         <Subtitle>join the discord</Subtitle>
       </Button>
     </Layout>
