@@ -119,7 +119,7 @@ const Navbar = () => {
         {navItems}
 
         {/* Toggles drawer. */}
-        <MenuButton onClick={() => setIsOpen(!isOpen)}>
+        <MenuButton type="button" onClick={() => setIsOpen(!isOpen)}>
           <GiHamburgerMenu size={32} />
         </MenuButton>
       </NavContent>
