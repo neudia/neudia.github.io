@@ -1,10 +1,10 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import styled, { css } from "styled-components";
 import { contentWidth } from "../global";
 import { color, device, fontSizes } from "./Home";
-import { Link } from "gatsby";
 
 const Container = styled.nav`
   position: sticky;
@@ -16,8 +16,6 @@ const Container = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  box-shadow: 0 0.1rem 0.6rem ${color("primary")};
 `;
 
 const baseNavStyles = css`
@@ -85,6 +83,8 @@ const NavItem = styled(Link)`
   &:hover {
     color: ${color("secondary")};
     text-decoration: underline;
+
+    transition: text-decoration 0.2s ease-in-out;
   }
 `;
 
@@ -99,6 +99,7 @@ const MainIcon = styled.a`
 
   &:hover {
     color: ${color("secondary")};
+    transition: color 0.2s ease-in-out;
   }
 `;
 

@@ -4,6 +4,7 @@ import { TitleOnBg } from "../components/About";
 import Footer from "../components/Footer";
 import { color, device, fontSizes, MainLayout } from "../components/Home";
 import Navbar from "../components/Navbar";
+import data from "../data/eboard-data.json";
 import { GlobalStyle, theme } from "../global";
 
 export const Container = styled.div`
@@ -18,6 +19,7 @@ export const Container = styled.div`
   @media ${device.md} {
     width: 60rem;
     max-width: 100%;
+    font-size: ${fontSizes.sm};
   }
 `;
 
@@ -26,15 +28,19 @@ const Member = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  width: 17rem;
+  max-width: 100%;
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   background-color: ${color("secondary")};
   aspect-ratio: 1 / 1;
-  width: 17rem;
+  width: 100%;
   max-width: 100%;
 
   border-radius: 2rem;
+  object-fit: cover;
 `;
 
 const Info = styled.div`
@@ -43,6 +49,8 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  text-align: center;
 `;
 
 const Name = styled.h3`
@@ -55,6 +63,8 @@ const Role = styled.h4`
   color: ${color("primary")};
   font-weight: normal;
   font-style: italic;
+
+  max-width: 100%;
 
   @media ${device.md} {
     font-size: ${fontSizes.xs};
@@ -71,10 +81,6 @@ const MemberLayout = styled.div`
 `;
 
 const EboardPage = () => {
-  const member = { name: "Chanmi Oh", role: "Technology Officer" };
-
-  const members = [member, member, member, member, member, member];
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -84,9 +90,9 @@ const EboardPage = () => {
           <TitleOnBg>meet the eboard</TitleOnBg>
 
           <MemberLayout>
-            {members.map((m) => (
+            {data.map((m: any) => (
               <Member>
-                <Image />
+                <Image src={m.photo} />
                 <Info>
                   <Name>{m.name}</Name>
                   <Role>{m.role}</Role>

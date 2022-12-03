@@ -1,7 +1,6 @@
+import { navigate } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
-import Ghost from "../images/ghostie.png";
-import { navigate } from "gatsby";
 
 export const color = (variant: string) => (props: any) => props.theme[variant];
 
@@ -30,6 +29,9 @@ export const MainLayout = styled.main`
 `;
 
 const Layout = styled(MainLayout)`
+  background-color: ${color("primary")};
+  color: ${color("bg")};
+
   height: 95vh;
   gap: 3rem;
   @media ${device.md} {
@@ -45,7 +47,7 @@ const MainContent = styled.div`
   align-items: center;
 `;
 
-const TextGroup = styled.div`
+const Header = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -69,21 +71,33 @@ const Image = styled.div`
 
 const Button = styled.button`
   background-color: ${color("bg")};
-  border-color: ${color("primary")};
   color: ${color("primary")};
+  border: none;
+
   padding: 1rem 3rem 1rem 3rem;
   border-radius: 2rem;
+
   transition: 0.3s;
 
   &:hover {
-    background-color: ${color("primary")};
-    border-color: ${color("primary")};
-    color: ${color("bg")};
+    background-color: ${color("secondary")};
+    color: ${color("primary")};
+  }
+`;
+
+const Link = styled.a`
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(670%)
+      hue-rotate(341deg) brightness(104%) contrast(99%);
   }
 `;
 
 export const Subtitle = styled.h2`
   font-weight: initial;
+
+  ${Header} & {
+    color: ${color("secondary")};
+  }
 
   @media ${device.md} {
     font-size: ${fontSizes.lg};
@@ -96,22 +110,37 @@ export const Subtitle = styled.h2`
   }
 `;
 
+const Socials = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+
 const Home = () => {
   const inviteLink = "https://discord.gg/n9MvDAxZgS";
   return (
     <Layout>
       <MainContent>
-        <TextGroup>
+        <Header>
           <Title>dia</Title>
           <Subtitle>digital illustration association</Subtitle>
-        </TextGroup>
+        </Header>
         <Image>
-          <img src={Ghost} style={{ width: "60%" }} />
+          <img
+            alt="Yellow ghost"
+            src="../../ghostie.png"
+            style={{ width: "60%" }}
+          />
         </Image>
       </MainContent>
-      <Button onClick={() => navigate(inviteLink)}>
-        <Subtitle>join the discord</Subtitle>
-      </Button>
+      <Socials>
+        <Button onClick={() => navigate(inviteLink)}>
+          <Subtitle>join the discord</Subtitle>
+        </Button>
+        <Link href="https://www.instagram.com/neu.dia/">
+          <img alt="Instagram icon" src="../../IGIcon.svg" />
+        </Link>
+      </Socials>
     </Layout>
   );
 };
