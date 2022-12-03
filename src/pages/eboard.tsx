@@ -91,7 +91,7 @@ const EboardPage = () => {
 
           <MemberLayout>
             {data.map((m: any) => (
-              <Member>
+              <Member key={m.name}>
                 <Image src={m.photo} />
                 <Info>
                   <Name>{m.name}</Name>

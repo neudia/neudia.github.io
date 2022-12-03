@@ -6,7 +6,7 @@ import styled, { css } from "styled-components";
 import { contentWidth } from "../global";
 import { color, device, fontSizes } from "./Home";
 
-const Container = styled.nav`
+export const Container = styled.nav`
   position: sticky;
   background-color: ${color("primary")};
 
@@ -106,7 +106,7 @@ const MainIcon = styled.a`
 export const pages = ["home", "eboard", "resources"];
 
 const navItems = pages.map((p: string) => (
-  <NavItem to={p === "home" ? "/" : `/${p}`} key={p}>
+  <NavItem key={p} to={p === "home" ? "/" : `/${p}`}>
     {p}
   </NavItem>
 ));
