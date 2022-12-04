@@ -52,11 +52,11 @@ const Footer = () => {
   return (
     <Layout>
       <FooterContent>
-        {pages.map((p: string) => {
+        {pages.map((p) => {
           return (
             <>
-              <FooterItem to={p === "home" ? "/" : p} key={p}>
-                {p}
+              <FooterItem to={p.url} key={p.name}>
+                {p.name}
               </FooterItem>
               <Divider>•</Divider>
             </>

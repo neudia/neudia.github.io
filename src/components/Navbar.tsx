@@ -8,6 +8,7 @@ import { color, device, fontSizes } from "./Home";
 
 export const Container = styled.nav`
   position: sticky;
+  top: 0;
   background-color: ${color("primary")};
 
   color: ${color("bg")};
@@ -103,11 +104,15 @@ const MainIcon = styled.a`
   }
 `;
 
-export const pages = ["home", "eboard", "resources"];
+export const pages = [
+  { name: "home", url: "/home" },
+  { name: "eboard", url: "/eboard" },
+  { name: "resources", url: "/resources" },
+];
 
-const navItems = pages.map((p: string) => (
-  <NavItem key={p} to={p === "home" ? "/" : `/${p}`}>
-    {p}
+const navItems = pages.map((p) => (
+  <NavItem key={p.name} to={p.url}>
+    {p.name}
   </NavItem>
 ));
 
