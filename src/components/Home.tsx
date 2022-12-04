@@ -36,6 +36,7 @@ const Layout = styled(MainLayout)`
   gap: 3rem;
   @media ${device.md} {
     gap: 5rem;
+    height: 90vh;
   }
 `;
 
