@@ -32,7 +32,7 @@ const Layout = styled(MainLayout)`
   background-color: ${color("primary")};
   color: ${color("bg")};
 
-  height: calc(100vh - 63px);
+  height: 90vh;
   gap: 3rem;
   @media ${device.md} {
     gap: 5rem;
