@@ -26,7 +26,8 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.6.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "vercel": "^28.11.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
