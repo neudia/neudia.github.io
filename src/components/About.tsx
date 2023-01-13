@@ -72,7 +72,7 @@ const Content = styled.div`
 const About = () => (
   <Layout>
     <Container>
-      <TitleOnBg>who we are test</TitleOnBg>
+      <TitleOnBg>who we are</TitleOnBg>
       DIA aims to foster passion for digital illustration to those of all levels
       of experience while cultivating a friendly, open-minded community amongst
       artists and patrons. We welcome everyone who appreciates digital
