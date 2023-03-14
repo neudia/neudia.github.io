@@ -4,8 +4,8 @@ import { TitleOnBg } from "../components/About";
 import Footer from "../components/Footer";
 import { color, device, fontSizes, MainLayout } from "../components/Home";
 import Navbar from "../components/Navbar";
-import data from "../data/eboard-data.json";
 import { GlobalStyle, theme } from "../global";
+import useFirestore, { Document } from "../useFirestore";
 
 export const Container = styled.div`
   width: 100%;
@@ -81,6 +81,8 @@ const MemberLayout = styled.div`
 `;
 
 const EboardPage = () => {
+  const { docs: eboardDocs } = useFirestore("eboard");
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -90,12 +92,15 @@ const EboardPage = () => {
           <TitleOnBg>meet the eboard</TitleOnBg>
 
           <MemberLayout>
-            {data.map((m: any) => (
-              <Member key={m.name}>
-                <Image src={m.photo} />
+            {eboardDocs.map((m: Document) => (
+              <Member key={m.id}>
+                <Image src={m.data?.img} />
                 <Info>
-                  <Name>{m.name}</Name>
-                  <Role>{m.role}</Role>
+                  <Name>
+                    {m.data?.firstName}&nbsp;
+                    {m.data?.lastName}
+                  </Name>
+                  <Role>{m.data?.role}</Role>
                 </Info>
               </Member>
             ))}
