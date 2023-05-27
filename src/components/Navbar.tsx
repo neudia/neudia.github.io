@@ -7,6 +7,7 @@ import { contentWidth } from "../global";
 import { color, device, fontSizes } from "./Home";
 
 export const Container = styled.nav`
+  z-index: 1;
   position: sticky;
   top: 0;
   background-color: ${color("primary")};
@@ -90,22 +91,21 @@ const NavItem = styled(Link)`
 `;
 
 const MainIcon = styled.a`
-  color: inherit;
-  font-size: ${fontSizes.lg};
-  text-decoration: none;
   flex: 1;
 
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-
-  &:hover {
-    color: ${color("secondary")};
-    transition: color 0.2s ease-in-out;
+  img {
+    padding: 1rem 0;
+    width: ${fontSizes.lg};
+    transition: 0.3s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
 export const pages = [
-  { name: "home", url: "/home" },
+  { name: "home", url: "/" },
   { name: "eboard", url: "/eboard" },
   { name: "resources", url: "/resources" },
 ];
@@ -122,7 +122,11 @@ const Navbar = () => {
   return (
     <Container>
       <NavContent>
-        <MainIcon href="/">dia</MainIcon>
+        <MainIcon href="/">
+          <img
+              alt="Yellow ghost"
+              src="/ghostie.png" />
+        </MainIcon>
         {navItems}
 
         {/* Toggles drawer. */}

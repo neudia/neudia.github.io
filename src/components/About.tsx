@@ -79,7 +79,7 @@ const About = () => (
       illustration to come together and support each other.
       <Content>
         <Header>
-          for artists,
+          🎨 for artists,
           <Border />
         </Header>
         We encourage drawing with fun events and peer support to improve skills
@@ -87,7 +87,7 @@ const About = () => (
       </Content>
       <Content>
         <Header>
-          for connoisseurs,
+          🖼️ for connoisseurs,
           <Border />
         </Header>
         We provide a reliable way to find local artists to follow or commission.
