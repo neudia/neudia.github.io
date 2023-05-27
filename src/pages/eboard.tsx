@@ -92,7 +92,7 @@ const EboardPage = () => {
           <TitleOnBg>meet the eboard</TitleOnBg>
 
           <MemberLayout>
-            {eboardDocs.map((m: Document) => (
+          {eboardDocs.map((m: Document) => (
               <Member key={m.id}>
                 <Image src={m.data?.img} />
                 <Info>
