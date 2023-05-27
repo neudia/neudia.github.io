@@ -47,14 +47,14 @@ const Events = () => {
   return (
     <ContentLayout>
       <ContentBg>
-        <Title>upcoming events</Title>
+        <Title>📅 upcoming events</Title>
         <Content
           as="iframe"
           src="https://calendar.google.com/calendar/embed?src=digitalillustrationassociation%40gmail.com&ctz=America%2FNew_York"
         />
       </ContentBg>
       <ContentBg>
-        <Title>announcements</Title>
+        <Title>📢 announcements</Title>
         <Content
           as="iframe"
           src="https://e.widgetbot.io/channels/797709118357110835/798992018008571944"

@@ -34,13 +34,22 @@ const Member = styled.div`
 `;
 
 const Image = styled.img`
-  background-color: ${color("secondary")};
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  max-width: 100%;
+aspect-ratio: 1 / 1;
+width: 100%;
+max-width: 100%;
 
-  border-radius: 2rem;
-  object-fit: cover;
+border-radius: 2rem;
+object-fit: cover;
+
+transition: 0.3s;
+transform: translateX(-10px) translateY(-10px);
+box-shadow: 10px 10px 0 1px ${color("secondary")};
+
+&:hover {
+  cursor: pointer;
+  transform: unset;
+  box-shadow: unset;
+}
 `;
 
 const Info = styled.div`
@@ -92,7 +101,7 @@ const EboardPage = () => {
           <TitleOnBg>meet the eboard</TitleOnBg>
 
           <MemberLayout>
-            {eboardDocs.map((m: Document) => (
+          {eboardDocs.map((m: Document) => (
               <Member key={m.id}>
                 <Image src={m.data?.img} />
                 <Info>

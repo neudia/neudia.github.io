@@ -1,8 +1,8 @@
-import { Link } from "gatsby";
+import {Link as GatsbyLink} from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
-import { color, device, fontSizes, MainLayout } from "./Home";
-import { pages } from "./Navbar";
+import {color, device, fontSizes, Link, MainLayout} from "./Home";
+import {pages} from "./Navbar";
 
 const Layout = styled(MainLayout)`
   background-color: ${color("primary")};
@@ -20,14 +20,14 @@ const Layout = styled(MainLayout)`
 const FooterContent = styled.ul`
   width: 40rem;
   max-width: 100%;
-
+  
   display: flex;
   justify-content: space-evenly;
 
   list-style-type: none;
 `;
 
-const FooterItem = styled(Link)`
+const FooterItem = styled(GatsbyLink)`
   color: inherit;
   text-decoration: none;
 
@@ -46,26 +46,51 @@ const Divider = styled.li`
 const Copyright = styled.div`
   color: ${color("secondary")};
   font-style: italic;
+  font-size: ${fontSizes.sm};
 `;
 
+const SocialLinks = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  
+  img {
+    width: 36px;
+    margin: 1rem;
+  }
+`
+
+const currYear = new Date().getFullYear();
+
 const Footer = () => {
-  return (
-    <Layout>
-      <FooterContent>
-        {pages.map((p) => {
-          return (
-            <>
-              <FooterItem to={p.url} key={p.name}>
-                {p.name}
-              </FooterItem>
-              <Divider>•</Divider>
-            </>
-          );
-        })}
-      </FooterContent>
-      <Copyright>made by dia @ 2022</Copyright>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <FooterContent>
+                {pages.map((p, key) => {
+                    return (
+                        <>
+                            <FooterItem to={p.url} key={key}>
+                                {p.name}
+                            </FooterItem>
+                            <Divider>•</Divider>
+                        </>
+                    );
+                })}
+            </FooterContent>
+
+            <SocialLinks>
+                <Link href="https://www.instagram.com/neu.dia/" target="_blank">
+                    <img alt="Instagram icon" src="/instagram-icon.svg" />
+                </Link>
+
+                <Link href="https://discord.gg/n9MvDAxZgS" target="_blank">
+                    <img alt="Discord Icon" src="/discord-icon.svg" />
+                </Link>
+            </SocialLinks>
+
+            <Copyright>made with ❤ by dia @ {currYear}</Copyright>
+        </Layout>
+    );
 };
 
 export default Footer;
